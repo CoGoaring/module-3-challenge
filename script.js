@@ -38,6 +38,15 @@ const getRandomEmployee = function(employeesArray) {
 
 }
 
+// Ask if they want to add more
+addMore = function () {
+  let again = window.confirm(`Do you want to add more information?`);
+  while (again) {
+    collectEmployees();
+    again = window.confirm(`Do you want to add more information?`);
+  }
+}
+
 /*
   ====================
   STARTER CODE
@@ -81,6 +90,8 @@ const displayEmployees = function(employeesArray) {
 
 const trackEmployeeData = function() {
   const employees = collectEmployees();
+
+  addMore();
 
   console.table(employees);
 
